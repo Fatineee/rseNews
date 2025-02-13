@@ -80,33 +80,41 @@ export function Navbar() {
         </div>
 
         {/* Search Bar with Dynamic Icon Color */}
-        <div className="ml-4 hidden lg:flex items-center relative">
-          {!isSearchOpen ? (
-            <button
-              onClick={() => setIsSearchOpen(true)}
-              className={`p-2 rounded-full transition-all ${
-                isScrolling ? "text-gray-900 hover:bg-gray-300" : "text-white hover:bg-gray-800"
-              }`}
-            >
-              <MagnifyingGlassIcon className="h-6 w-6" />
-            </button>
-          ) : (
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[200px] sm:w-[250px] md:w-[280px] flex items-center bg-white shadow-lg rounded-full px-3 py-1 transition-all duration-300">
-              <input
-                type="text"
-                placeholder="Tapez votre recherche..."
-                className="flex-grow outline-none border-none text-gray-700 placeholder-gray-400 text-sm"
-                autoFocus
-              />
-              <button
-                className="text-gray-600 hover:text-gray-800 transition-all"
-                onClick={() => setIsSearchOpen(false)}
-              >
-                <XMarkIcon className="h-5 w-5" />
-              </button>
-            </div>
-          )}
-        </div>
+<div className="ml-4 hidden lg:flex items-center relative">
+  {!isSearchOpen ? (
+    <button
+      onClick={() => setIsSearchOpen(true)}
+      className={`p-2 transition-all ${
+        isScrolling ? "text-gray-900 hover:bg-gray-300" : "text-white hover:bg-gray-800"
+      }`}
+    >
+      <MagnifyingGlassIcon className="h-6 w-6" />
+    </button>
+  ) : (
+    <div
+      className={`absolute right-0 top-1/2 -translate-y-1/2 w-[200px] sm:w-[250px] md:w-[280px] flex items-center transition-all duration-300`}
+    >
+      <input
+        type="text"
+        placeholder="Tapez votre recherche..."
+        className={`flex-grow outline-none border-none bg-transparent text-sm px-2 transition-all duration-300
+        ${isScrolling ? "text-gray-900 placeholder-gray-900" : "text-white placeholder-white"}`}
+        autoFocus
+      />
+      <button
+        className={`transition-all duration-300 ${
+          isScrolling ? "text-gray-900 hover:text-gray-700" : "text-white hover:text-gray-300"
+        }`}
+        onClick={() => setIsSearchOpen(false)}
+      >
+        <XMarkIcon className="h-5 w-5" />
+      </button>
+    </div>
+  )}
+</div>
+
+
+
 
         {/* Mobile Menu */}
         <IconButton

@@ -15,13 +15,19 @@ const LINKS = [
   },
 ];
 
-const CURRENT_YEAR = new Date().getFullYear();
+const LOGOS = [
+  "/image/logo1.png",
+  "/image/logo2.png",
+  "/image/logo3.png",
+  "/image/logo4.png",
+  
+];
 
 export function Footer() {
   return (
-    <footer className="px-8 pt-24 pb-8">
+    <footer className="px-8 pt-24 pb-8 relative overflow-hidden bg-white">
       <div className="container max-w-6xl flex flex-col mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-3 !w-full ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 w-full">
           <div className="flex col-span-2 items-center gap-10 mb-10 lg:mb-0 md:gap-36">
             {LINKS.map(({ title, items }) => (
               <ul key={title}>
@@ -33,7 +39,7 @@ export function Footer() {
                     <Typography
                       as="a"
                       href="#"
-                      className="py-1 font-normal !text-gray-700 transition-colors hover:!text-gray-900"
+                      className="py-1 font-normal text-gray-700 transition-colors hover:text-gray-900"
                     >
                       {link}
                     </Typography>
@@ -42,11 +48,11 @@ export function Footer() {
               </ul>
             ))}
           </div>
-          <div className="">
+          <div>
             <Typography variant="h6" className="mb-3 text-left">
               Subscribe
             </Typography>
-            <Typography className="!text-gray-500 font-normal mb-4 text-base">
+            <Typography className="text-gray-500 font-normal mb-4 text-base">
               Get access to subscriber exclusive deals and be the first who gets
               informed about fresh sales.
             </Typography>
@@ -55,38 +61,34 @@ export function Footer() {
             </Typography>
             <div className="flex mb-3 flex-col lg:flex-row items-start gap-4">
               <div className="w-full">
-                {/* @ts-ignore */}
                 <Input label="Email" color="gray" />
-                <Typography className="font-medium mt-3 !text-sm !text-gray-500 text-left">
-                  I agree the{" "}
+                <Typography className="font-medium mt-3 text-sm text-gray-500 text-left">
+                  I agree to the{" "}
                   <a
                     href="#"
                     className="font-bold underline hover:text-gray-900 transition-colors"
                   >
-                    Terms and Conditions{" "}
+                    Terms and Conditions
                   </a>
                 </Typography>
               </div>
-              <Button color="gray" className="w-full lg:w-fit" size="md">
-                button
-              </Button>
             </div>
           </div>
         </div>
-        <Typography
-          color="blue-gray"
-          className="md:text-center mt-16 font-normal !text-gray-700"
-        >
-          &copy; {CURRENT_YEAR} Made with{" "}
-          <a href="https://www.material-tailwind.com" target="_blank">
-            Material Tailwind
-          </a>{" "}
-          by{" "}
-          <a href="https://www.creative-tim.com" target="_blank">
-            Creative Tim
-          </a>
-          .
-        </Typography>
+      </div>
+
+      {/* LOGO SECTION */}
+      <div className="w-full bg-white py-6 flex justify-center">
+        <div className="flex justify-center items-center gap-10 flex-wrap max-w-5xl">
+          {LOGOS.map((logo, index) => (
+            <img
+              key={index}
+              src={logo}
+              alt={`Logo ${index + 1}`}
+              className="h-16 w-auto max-w-[150px] object-contain"
+            />
+          ))}
+        </div>
       </div>
     </footer>
   );

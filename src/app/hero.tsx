@@ -62,7 +62,7 @@ function Hero() {
 
           {/* Bouton d'exploration */}
           <Button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300"
+            className="bg-white hover:bg-white text-black font-semibold px-6 py-3 rounded-lg transition-all duration-300"
             onClick={() => window.scrollTo({ top: 700, behavior: "smooth" })}
           >
             Explorer les articles

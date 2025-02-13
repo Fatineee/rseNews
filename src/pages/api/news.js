@@ -62,7 +62,7 @@ async function scrapeWebsite(site) {
 
     return { source: site.name, articles };
   } catch (error) {
-    console.error('❌ Error scraping ${site.name}:', error.message);
+    console.error(`❌ Error scraping ${site.name}:`, error.message);
     return { source: site.name, articles: [] }; // Return empty data if error
   }
 }
