@@ -10,8 +10,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Super Atlas"
-};
+  title: "Super Atlas",
+  };
 
 export default function RootLayout({
   children,

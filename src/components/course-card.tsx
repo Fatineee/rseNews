@@ -17,7 +17,7 @@ export function CourseCard({ img, title, desc, buttonLabel }: CourseCardProps) {
       <CardBody className="p-0">
         <a
           href="#"
-          className="text-blue-gray-900 transition-colors hover:text-gray-800"
+          className="text-gray-900 transition-colors hover:text-gray-800"
         >
           <Typography variant="h5" className="mb-2">
             {title}

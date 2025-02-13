@@ -9,7 +9,7 @@ export function CarouselFeatures() {
   return (
     <section className="px-8 pt-40 pb-20">
       <div className="flex mb-16 flex-col items-center">
-        <Typography variant="h2" className="text-center mb-2" color="blue-gray">
+        <Typography variant="h2" className="text-center mb-2" color="gray">
           What Students Say
         </Typography>
         <Typography
