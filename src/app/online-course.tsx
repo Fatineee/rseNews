@@ -45,7 +45,7 @@ export function OnlineCourse() {
           />
         </div>
         <div className="col-span-2 lg:pl-24">
-          <Typography variant="h2" color="blue-gray" className="mb-4">
+          <Typography variant="h2" color="gray" className="mb-4">
             Online Course
           </Typography>
           <Typography
