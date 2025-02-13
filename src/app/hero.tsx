@@ -56,8 +56,8 @@ function Hero() {
           >
             La Responsabilité Sociétale des Entreprises est une politique qui 
             intègre volontairement des préoccupations sociales et 
-            environnementales à l'activité commerciale et aux relations avec 
-            les parties prenantes.
+            environnementales à L&apos;activité commerciale et aux relations avec 
+            les parties prenantes
           </Typography>
 
           {/* Bouton d'exploration */}
