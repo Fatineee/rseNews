@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Scrape RSE News
 
 on:
@@ -10,3 +11,17 @@ jobs:
     steps:
       - name: Call Next.js API
         run: curl -X GET "https://your-vercel-app.vercel.app/api/scrape"
+=======
+name: Scrape RSE News
+
+on:
+  schedule:
+    - cron: "0 * * * *" # Runs every hour
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call Next.js API
+        run: curl -X GET "https://your-vercel-app.vercel.app/api/scrape"
+>>>>>>> 71c47c61102092b678d629e5971e0bfe14490ad5
