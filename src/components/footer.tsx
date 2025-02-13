@@ -30,13 +30,7 @@ export function Footer() {
           <div className="flex col-span-2 items-center gap-10 mb-10 lg:mb-0 md:gap-36">
             {LINKS.map(({ title, items }) => (
               <ul key={title}>
-<<<<<<< HEAD
                 <h6 className="mb-4 text-lg font-semibold text-gray-900">{title}</h6>
-=======
-                <Typography variant="h6" color="gray" className="mb-4">
-                  {title}
-                </Typography>
->>>>>>> 9a10fd6a21f40d94961cd93c2f42be43c3796d6e
                 {items.map((link) => (
                   <li key={link}>
                     <a
