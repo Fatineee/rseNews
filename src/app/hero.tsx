@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
 
 const images = [
   "/image/rse2.jpeg",
@@ -9,23 +10,26 @@ const images = [
   "/image/rse3.jpeg",
 ];
 
-function Hero() {
+const Hero = React.memo(() => {
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change every 5 seconds
-
-    return () => clearInterval(interval);
+  const updateIndex = useCallback(() => {
+    setIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, []);
+
+  useEffect(() => {
+    console.log("Index updated:", index);
+
+    const interval = setInterval(updateIndex, 5000); // Change image every 5 seconds
+    return () => clearInterval(interval);
+  }, [updateIndex]);
 
   return (
     <div className="relative min-h-screen w-full">
       {/* Carrousel des images */}
       <AnimatePresence>
         <motion.div
-          key={images[index]}
+          key={`hero-img-${index}`} // Unique key to avoid unnecessary re-renders
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -50,7 +54,7 @@ function Hero() {
           <p className="text-white mt-6 mb-10 w-full md:max-w-full lg:max-w-3xl text-lg sm:text-xl">
             La Responsabilité Sociétale des Entreprises est une politique qui 
             intègre volontairement des préoccupations sociales et 
-            environnementales à L&apos;activité commerciale et aux relations avec 
+            environnementales à l&apos;activité commerciale et aux relations avec 
             les parties prenantes.
           </p>
 
@@ -65,6 +69,6 @@ function Hero() {
       </div>
     </div>
   );
-}
+});
 
 export default Hero;
